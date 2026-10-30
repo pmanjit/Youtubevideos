@@ -24,7 +24,7 @@ The world's temperature drops and does not come back. You survive it — but the
 ## Channel positioning
 A NEW channel, deliberately distinct from **inkexplainer**.
 - No chalk-on-paper, no sketch-notebook, no hand-drawn diagram voiceover tropes.
-- Visual language is to be derived **verbatim** from the user-supplied art reference.
+- Visual language **is** the user-supplied stick-figure reference, reproduced in code (`tools/stick_snap.py`).
 - Tone: cold, procedural, second-person. Calm instructions over dread. Never cheerful.
 
 ## Locked defaults
@@ -39,5 +39,7 @@ A NEW channel, deliberately distinct from **inkexplainer**.
 ## Open items
 - [x] Hook selection → **A2** "Someone Is Already In Your Yard"
 - [x] Thumbnail concept → **B1** "DON'T OPEN IT"
-- [ ] Art reference from user — still open; provisional style anchor in `continuity.md` stands until then
-- [ ] Script approval — STATE 2 stop condition
+- [x] Art reference received → flat stick-figure style, palette sampled, **locked** in `continuity.md`
+- [ ] Script approval — STATE 2 stop condition (still open)
+- [ ] Anchor approval — STATE 4 stop condition
+- [ ] Thumbnail — deferred to STATE 5 (draft failed QC)

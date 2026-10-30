@@ -1,58 +1,102 @@
 # CONTINUITY — cold_snap
 
-## Style invariants — PROVISIONAL "frozen reportage" (replaceable)
+## Style invariants — DERIVED FROM USER REFERENCE (locked)
 
-Replace with the user art reference on arrival. Copy the block below VERBATIM into every prompt.
+Source: three user-supplied frames (stick-figure explainer). Palette sampled with PIL,
+line weight measured from the PNGs. This block is **verbatim** and is the anchor for
+every frame. Rendering is deterministic code (`tools/stick_snap.py`), so drift is
+structurally impossible — the constants below ARE the film.
 
+```
 STYLE BLOCK (verbatim):
+Flat stick-figure cartoon explainer. Thick uniform black outlines, 9 px at 1920 width,
+rounded caps, no taper. Completely flat solid color fills — zero gradients, zero
+shading, zero texture, zero halftone. Simple geometric shapes, hand-drawn wobble
+implied but not simulated. Round cream heads with two dot eyes, one short eyebrow
+stroke per eye, a small flat mouth. Thin single-stroke black stick limbs, solid black
+blob hands and feet. Flat elevation staging, one-point staging avoided. Night palette
+for this film: navy #1E2D50, slate blue-grey #7A8791, brown #75503B, cream #F8F1D8,
+paper white #FCFDF8; one warm accent (mustard #F1C768 / flame #FF8421) per frame,
+max ~8% of area. No text, no lettering, no watermark.
 ```
-Frozen-reportage look: near-monochrome blue-grey palette with exactly one warm ember-orange
-accent reserved for heat, breath, skin and flame; painterly digital realism with visible coarse
-brush texture and fine film grain; hard single-source rim lighting; deep matte black negative
-space; low-key chiaroscuro; no outlines, no ink linework, no halftone dots; cinematic depth of
-field, 16:9 frame.
+
+PALETTE (sampled from the reference, not invented):
+```
+#000000  ink — every outline
+#FCFDF8  paper white — snow light, candle bodies, faces on glass
+#F8F1D8  cream — the character's face, hands
+#E5D3BA  beige — wall (day/bright scenes only)
+#75503B  brown — floor, wood, door
+#7A8791  slate blue-grey — mattress, sofa, window frames
+#1E2D50  navy — night sky, the character's coat
+#5E5653  rock brown-grey — cave/stone
+#F1C768  mustard — the scarf, blanket (the warmth accent)
+#FF8421  fire orange;  #FFAF4B  flame core
+#DBE4EB  snow tint (flat, one step off paper)
 ```
 
-PALETTE:
-  #0E1620  deep slate (ground/shadow)
-  #2A3A47  steel blue-grey (mid)
-  #6E8494  pale frost (secondary light)
-  #C8D3D9  bone frost (specular highlight)
-  #E2703A  ember orange — accent ONLY (heat / breath / skin / flame). Max ~5% of frame.
-  #120C0A  warm near-black (deepest shadow)
+LINE WEIGHT: 9.0 px at 1920×1080 (measured 4–12 px at ~1180 px in the reference).
+Every shape is outlined; nothing is separated by value alone.
 
-LINE WEIGHT: none — forms separated by value and rim light, never by outline.
-RENDERING: painterly realism, coarse visible brush strokes, slightly desaturated.
-TEXTURE: fine grain, breath-haze in every interior, frost crystal detail on glass.
-LIGHTING: one hard source, low and off-frame; rim light on shoulders and breath.
-COMPOSITION: heavy negative space in black; subject offset; nothing centered.
+## Subject invariants
 
-## Subject invariants (PENDING)
 ```
-CHARACTER (YOU — second-person POV protagonist, mostly seen as hands/sleeve/back):
-  face: mostly avoided; when shown, half-shadowed, never a hero shot
-  silhouette: average build, rounded shoulders, hood up
-  garments: charcoal wool coat, olive-grey knit beanie, one heavy leather work glove
-            (RIGHT hand only — left hand bare, this is a recurring story detail)
-  skin: chapped red knuckles, frost in beard stubble
+YOU (second-person protagonist):
+  head: round, cream #F8F1D8, black outline; two black dot eyes; flat eyebrow strokes;
+        small flat mouth. NO hair, NO nose, NO ears.
+  body: flat navy #1E2D50 coat, shoulder seams at 0.072 of height each side, hem at
+        mid-thigh. Black coat-opening line from collar to hem.
+  neck: thin black single stroke — always visible, never occluded by the coat.
+  limbs: single-stroke black, 9 px; blob hands (r = 0.026 H), blob feet.
+  SCARF: mustard #F1C768 band under the chin + one hanging tail on the viewer's left.
+         THIS IS THE RECOGNITION TOKEN. If the scarf is missing, the frame is wrong.
+  proportions: head diameter = 0.23 H, shoulder at 0.745 H, hip 0.46 H, splay 0.055 H.
 
-LOCATION (the apartment):
-  single cold-blue window with thick frost, painted-shut frame
-  bare floorboards, mattress dragged to the door (visible from b05 onward)
-  one kerosene lantern = the only ember-orange source indoors
+OTHERS (strangers, neighbours):
+  identical skeleton, no scarf, coat in slate #7A8791 or brown #75503B.
+  At distance (>40% of frame height away) they become plain black silhouettes:
+  head circle + trapezoid body + two leg strokes. No faces.
+
+THE ROOM:
+  door, left: brown #75503B slab at x 96–430.
+  mattress barricade: slate, leaning against the door, white sheet stripe at the top.
+  table, centre-right: wood #966C4E, three white candles with orange flames —
+    the ONLY warm light indoors.
+  cupboard, right: brown, twin doors, empty.
+  window, far right: slate frame, navy sky, snow tint ground, white frost rim.
+  thermometer on the wall: white tube, red bulb, red column LOW in the tube.
 ```
 
 ## Story-state rules
-| Rule | Established at | Must hold for |
+| # | Rule | Holds for |
 |---|---|---|
-| Window frost density increases as the video progresses | b01 | b01 → b-end |
-| Breath visible indoors from first frame onward | b01 | all interior frames |
-| Snow accumulation rises monotonically | b02 | b02 → b-end |
+| S1 | Frost density on the window only ever INCREASES (rim blobs grow, clear patch shrinks) | b01 → end |
+| S2 | Breath puffs are visible in EVERY interior frame, drawn as 3 flat pale circles | all interior |
+| S3 | Snow outside accumulates: footprint trail is visible at b01, buried by b10+ | b01 → end |
+| S4 | The character always wears the mustard scarf after b01 | b02 → end |
+| S5 | Candle count only decreases: 3 → 2 → 1 → 0 | b05 → end |
+| S6 | The mattress is against the door from b05 onward (before that, the door is clear) | b05 → end |
+| S7 | Warm accent is mustard/ember only — never red, never pink | all frames |
 
 ## Moderation log
 | Blocked term | Replacement | Date |
 |---|---|---|
-| _none yet_ | | |
+| _none — no image-model pass is used; the engine cannot trip moderation_ | | |
 
 ## Anchor recipes
-_none yet — populated in STATE 4_
+```
+ANCHOR A — character : refs/ref01_character.png  (stick_figure(), coat=NAVY, scarf=True)
+ANCHOR B — window POV: refs/ref02_window_hook.png (scene_window_hook(), n_figures=3)
+ANCHOR C — interior  : refs/ref03_interior_room.png (scene_room_ref())
+```
+Every frame is generated by calling these functions, so composition, palette and
+proportion are inherited rather than re-described. No re-roll budget is meaningful
+against deterministic output — QC is a code review, not a lottery.
+
+## Rejected / superseded
+| Date | What | Why |
+|---|---|---|
+| 2026-10-30 | "frozen reportage" painterly anchor | superseded by the user's actual art reference |
+| 2026-10-30 | one-glove character detail | stick figures have no gloves; replaced by the mustard scarf |
+| 2026-10-30 | foreground hand pressed on the glass (4 attempts) | finger notches unreadable at this line weight; hand removed from frame 01, contour helper kept for later |
+| 2026-10-30 | thumbnail draft (door + face behind glass) | face and hand both failed QC; thumbnail deferred to STATE 5 |
