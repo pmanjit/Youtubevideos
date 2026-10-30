@@ -37,6 +37,7 @@ A NEW channel, deliberately distinct from **inkexplainer**.
 | Frame budget | not set — output of the micro-beat split in STATE 3 |
 
 ## Open items
-- [ ] Art reference from user (palette / line weight / rendering) — STATE 1 Step B
-- [ ] Hook selection (A / B / C) — STATE 1 Step B
-- [ ] Thumbnail concept selection (1 / 2 / 3) — STATE 1 Step B
+- [x] Hook selection → **A2** "Someone Is Already In Your Yard"
+- [x] Thumbnail concept → **B1** "DON'T OPEN IT"
+- [ ] Art reference from user — still open; provisional style anchor in `continuity.md` stands until then
+- [ ] Script approval — STATE 2 stop condition
