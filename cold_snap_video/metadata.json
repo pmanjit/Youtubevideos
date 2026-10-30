@@ -1,0 +1,11 @@
+{
+  "slug": "cold_snap",
+  "status": "pre-production",
+  "title": "The Cold Is The Clock",
+  "pov": "second-person",
+  "target_minutes": 5,
+  "voice": "en-US-AndrewNeural",
+  "voice_rate": "+10%",
+  "aspect": "16:9",
+  "captions": false
+}
