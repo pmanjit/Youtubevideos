@@ -4,7 +4,7 @@ An illustrated YouTube explainer about breathing, cellular respiration, oxygen, 
 
 ## Current stage
 
-State 5 — first frame batch complete: 8 accepted frames, 2 rejected first passes logged; next batch starts at visual row 9.
+State 5 — two frame batches complete: 16 accepted frames; rejected passes logged in batch contact sheets.
 
 ## Project files
 
