@@ -1,7 +1,7 @@
 # Production State
 
 - **Current state:** 5 — Frame Generation Loop
-- **Status:** Batch 6 generated, QC'd, and contact-sheeted. Eight accepted frames; two first-pass energy images rejected because they produced explosive bursts rather than controlled molecular energy.
+- **Status:** Batch 7 generated, QC'd, and contact-sheeted; all 8 frames accepted with no repairs.
 - **Project slug:** `why-we-breathe`
 - **Selected runtime:** approximately 9:11 at 3.1 words/second.
 - **Narration POV:** Second person.
@@ -12,9 +12,9 @@
 - **Approved style anchor:** `refs/style-test-03-stick-character.png`.
 - **Approved character anchor:** `refs/user-expressive-comic.png`.
 - **Approved ancient shoreline anchor:** `refs/style-test-04-stick-character-ancient.png`.
-- **Accepted frames:** `beat01m01`–`beat01m06`, `beat02m01`–`beat02m10`, `beat03m01`–`beat03m11`, `beat04m01`–`beat04m09`, `beat05m01`–`beat05m10`, `beat06m01`–`beat06m02` (48 total).
+- **Accepted frames:** `beat01m01`–`beat01m06`, `beat02m01`–`beat02m10`, `beat03m01`–`beat03m11`, `beat04m01`–`beat04m09`, `beat05m01`–`beat05m10`, `beat06m01`–`beat06m08`, `beat07m01`–`beat07m02` (56 total).
 - **Rejected first passes:** `beat01m01-v1` and `beat01m03-v1`; unexpected enclosing border, repaired by changing only the composition clause to full-bleed/no frame. `beat02m10-v1`; ancient shoreline was not clearly visible, repaired by specifying ancient rocky shoreline, deep-blue sea, stars and orange horizon, with no reflected figure. `beat05m06-v1` and `beat05m07-v1`; uncontrolled explosion-like energy bursts, repaired by changing only the energy-glow clause to small, contained pulses with no explosion or flame. Rejected versions retained under `contact_sheets/rejected/` and included on batch sheets.
-- **Frames completed / remaining:** 48 / 222.
-- **Contact sheets:** `contact_sheets/batch01.png` through `contact_sheets/batch06.png` (rejected versions are included where applicable).
-- **Next batch:** beats 49–56: `beat06m03` through `beat07m02`.
+- **Frames completed / remaining:** 56 / 214.
+- **Contact sheets:** `contact_sheets/batch01.png` through `contact_sheets/batch07.png` (rejected versions are included where applicable).
+- **Next batch:** beats 57–64: `beat07m03` through `beat07m10`.
 - **Declared exceptions:** None.
